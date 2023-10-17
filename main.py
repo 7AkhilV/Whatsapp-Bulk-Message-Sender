@@ -5,15 +5,19 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+import os 
 import time
 
 # Config
 login_time = 30                 # Time for login (in seconds)
-new_msg_time = 60                # TTime for a new message (in seconds)
+new_msg_time = 10                # TTime for a new message (in seconds)
 send_msg_time = 5               # Time for sending a message (in seconds)
 country_code = 91               # Set your country code
 action_time = 2                 # Set time for button click action
 image_path = 'image.png'        # Absolute path to you image
+
+# Create an absolute path for the image
+image_path = os.path.abspath('image.png')  # Provide the correct filename and path
 
 # Create driver
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
